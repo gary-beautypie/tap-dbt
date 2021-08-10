@@ -28,7 +28,7 @@
       "type": "number"
     },
     "plan": {
-      "type": "string"
+      "type": ["string", "null"]
     },
     "pending_cancel": {
       "type": "boolean"
