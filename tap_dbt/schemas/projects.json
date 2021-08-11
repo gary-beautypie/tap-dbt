@@ -7,7 +7,7 @@
       "type": "integer"
     },
     "account_id": {
-      "type": "string"
+      "type": "integer"
     },
     "connection": {
       "type": "object",
