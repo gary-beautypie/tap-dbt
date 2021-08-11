@@ -47,16 +47,16 @@ class AccountBasedStream(DBTStream):
             "Expected a URL path containing '{account_id}'. "
         )
 
-    def parse_response(self, response: requests.Response) -> Iterable[dict]:
-        yield response.json()["data"]
-
         
 class AccountsStream(AccountBasedStream):
     name = "accounts"
     path = "/accounts/{account_id}"
     schema_filepath = SCHEMAS_DIR / "accounts.json"
 
+    def parse_response(self, response: requests.Response) -> Iterable[dict]:
+        yield response.json()["data"]
 
+        
 class JobsStream(AccountBasedStream):
     name = "jobs"
     path = "/accounts/{account_id}/jobs"
@@ -69,12 +69,18 @@ class JobsStream(AccountBasedStream):
     ) -> Dict[str, Any]:
         return {"order_by": "updated_at"}
 
+    def parse_response(self, response: requests.Response) -> Iterable[dict]:
+        for thing in response.json()["data"]:
+            yield thing
 
 class ProjectsStream(AccountBasedStream):
     name = "projects"
     path = "/accounts/{account_id}/projects"
     schema_filepath = SCHEMAS_DIR / "projects.json"
 
+    def parse_response(self, response: requests.Response) -> Iterable[dict]:
+        for thing in response.json()["data"]:
+            yield thing
 
 class RunsStream(AccountBasedStream):
     name = "runs"
