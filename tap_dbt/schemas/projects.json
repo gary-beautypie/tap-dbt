@@ -86,12 +86,6 @@
     },
     "freshness_job_id": {
       "type": ["integer", "null"]
-    },
-    "docs_job": {
-      "type": ["string", "null"]
-    },
-    "freshness_job": {
-      "type": ["string", "null"]
     }
   }
 }
