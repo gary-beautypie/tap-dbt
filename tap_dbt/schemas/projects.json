@@ -25,9 +25,6 @@
     "repository": {
       "type": "object",
       "properties": {
-        "id": {
-          "type": "integer"
-        },
         "account_id": {
           "type": "integer"
         },
