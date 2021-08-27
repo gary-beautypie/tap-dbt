@@ -101,6 +101,9 @@
     "lifecycle_webhooks": {
       "type": "boolean"
     },
+    "lifecycle_webhooks_url": {
+      "type": ["string", "null"]
+    },
     "is_deferrable": {
       "type": "boolean"
     },
@@ -109,6 +112,12 @@
     },
     "cron_humanized": {
       "type": "string"
+    },
+    "next_run": {
+      "type": ["string", "null"]
+    },
+    "next_run_humanized": {
+      "type": ["string", "null"]
     }
   }
 }
