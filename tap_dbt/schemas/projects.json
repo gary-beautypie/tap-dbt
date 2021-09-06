@@ -69,12 +69,6 @@
     "skipped_setup": {
       "type": "boolean"
     },
-    "group_permissions": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    },
     "docs_job_id": {
       "type": ["integer", "null"]
     },
