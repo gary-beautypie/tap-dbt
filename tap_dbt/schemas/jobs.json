@@ -7,7 +7,7 @@
       "type": "integer"
     },
     "account_id": {
-      "type": ["string", "integer"]
+      "type": "string"
     },
     "project_id": {
       "type": "integer"
